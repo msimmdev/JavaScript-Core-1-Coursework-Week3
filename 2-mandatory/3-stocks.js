@@ -69,7 +69,7 @@ function getPriceChanges(closingPricesForAllStocks) {
     for (let stockPrices of closingPricesForAllStocks) {
         let startPrice = stockPrices[0] * 100;
         let closePrice = stockPrices[stockPrices.length - 1] * 100;
-        priceChanges.push((closePrice - startPrice) / 100);
+        priceChanges.push(Math.round(closePrice - startPrice) / 100);
     }
 
     return priceChanges;
