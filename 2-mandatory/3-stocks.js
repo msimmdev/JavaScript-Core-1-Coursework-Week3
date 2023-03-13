@@ -64,7 +64,15 @@ function getAveragePrices(closingPricesForAllStocks) {
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
 function getPriceChanges(closingPricesForAllStocks) {
-    // TODO
+    let priceChanges = [];
+
+    for (let stockPrices of closingPricesForAllStocks) {
+        let startPrice = stockPrices[0];
+        let closePrice = stockPrices[stockPrices.length - 1];
+        priceChanges.push(closePrice - startPrice);
+    }
+
+    return priceChanges;
 }
 
 /*
