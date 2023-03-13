@@ -44,7 +44,10 @@ function getAveragePrices(closingPricesForAllStocks) {
 
         //let sumOfPrices = stockPrices.reduce((iterator, element) => iterator + element);
         let averagePrice = sumOfPrices / stockPrices.length;
-        averagePrices.push(averagePrice);
+
+        let roundedAverage = Math.round(averagePrice * 100) / 100;
+
+        averagePrices.push(roundedAverage);
     }
 
     return averagePrices;
